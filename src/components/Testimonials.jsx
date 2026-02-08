@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useState } from 'react';
 // Testimonials Carousel Component
 
 export default function Testimonials() {
