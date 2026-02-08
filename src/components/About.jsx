@@ -37,12 +37,28 @@ export default function About() {
       <h2 className="text-center text-5xl font-0vo">About me</h2>
 
       <div className="flex w-full flex-col lg:flex-row items-start gap-20 my-20">
-        <div className="max-w-max mx-auto lg:mx-0 relative flex-shrink-0">
+        <div className="mflex flex-col gap-8 lg:w-80 flex-shrink-0
+                  <div className="relative mx-auto lg:mx-0">
           <img src="./assets/user-image.png" alt="" className="w-64 sm:w-80 rounded-3xl max-w-none" />
           <div className="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
-            <img src="./assets/circular-text.png" alt="" className="w-full animate-spin_slow" />
+            <img src="./assets/circular-text.png" alt="" className="w-items-stretch
             <img src="./assets/dev-icon.png" alt="" className="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
+                </div>
+
+              <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6">
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Tools I Use</h4>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {tools.map((tool, index) => (
+              <img
+                key={index}
+                src={tool.icon}
+                alt={tool.name}
+                className="w-10 h-10 object-contain"
+              />
+            ))}
+          </div>
+        </div>
         </div>
 
         <div className="flex-1">
@@ -115,7 +131,8 @@ export default function About() {
             ))}
           </ul>
 
-          <h4 className="my-6 text-gray-700 font-0vo dark:text-white/80">Tools I use</h4>
+          <h4 className="my-6 text-gray-700 font-0vo dark:text-white/80">40
+          </h4>
           <ul className="flex items-center gap-3 sm:gap-5">
             {tools.map(({ name, icon }, index) => (
               <li key={index} className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
