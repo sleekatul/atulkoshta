@@ -3,6 +3,9 @@ export default function About() {
     { name: 'vscode', icon: './assets/vscode.png' },
     { name: 'csharp', icon: './assets/csharp.png' },
     { name: 'xamarin', icon: './assets/xamarin.png' },
+        { name: 'dotnet', icon: './assets/dotnet.png' },
+    { name: 'sqlserver', icon: './assets/sqlserver.png' },
+    { name: 'maui', icon: './assets/maui.png' },
     { name: 'azure', icon: './assets/azure.png' },
     { name: 'git', icon: './assets/git.png' },
   ];
