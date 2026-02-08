@@ -158,7 +158,7 @@ export default function Work() {
       <div className="flex items-center justify-center gap-4 mt-10">
         <button
           onClick={prevProject}
-          className="p-3 p-3 bg-white border-2 border-gray-700 rounded-full hover:bg-gray-100 dark:bg-gray-800 dark:border-white
+          className=p-3 bg-white border-2 border-gray-700 rounded-full hover:bg-gray-100 dark:bg-gray-800 dark:border-white
           aria-label="Previous project"
         >
           <img src="./assets/right-arrow.png" alt="" className="w-4 dark:hidden" style={{ transform: 'rotate(180deg)' }} />
