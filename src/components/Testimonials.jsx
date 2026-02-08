@@ -1,18 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 // Testimonials Carousel Component
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto-change testimonial every 5 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [currentIndex, testimonials.length]);
 
   const testimonials = [
     { 
