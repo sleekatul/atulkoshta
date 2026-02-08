@@ -4,6 +4,16 @@ import { useState } from 'react';
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Auto-change testimonial every 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [currentIndex, testimonials.length]);
+
   const testimonials = [
     { 
       quote: "Atul has a highly professional approach and delivers high-end quality work on time. I thoroughly appreciate the thoughtful, fully engaged, and the above and beyond work awareness that Atul brings to the table.", 
