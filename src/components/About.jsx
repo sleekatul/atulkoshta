@@ -6,7 +6,7 @@ export default function About() {
         { name: 'dotnet', icon: './assets/dotnet.png' },
     { name: 'sqlserver', icon: './assets/mssql.jpg' },
     { name: 'maui', icon: './assets/maui.webp' },
-    { name: 'azure', icon: './assets/azure.png' },
+    { name: 'azure', icon: './assets/azure.svg' },
     { name: 'git', icon: './assets/git.png' },
   ];
 
