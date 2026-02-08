@@ -1,4 +1,5 @@
 import { useState } from 'react';
+// Testimonials Carousel Component
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
