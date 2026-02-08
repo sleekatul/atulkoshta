@@ -8,8 +8,7 @@ export default function About() {
     { name: 'maui', icon: './assets/maui.webp' },
     { name: 'azure', icon: './assets/azure.svg' },
     { name: 'git', icon: './assets/git.svg' },
-        { name: 'entityframework', icon: './assets/ef.png' },
-        { name: 'postman', icon: './assets/postman.png' },
+    { name: 'entityframework', icon: './assets/ef.png' },
     { name: 'visualstudio', icon: './assets/visualstudio.png' },  ];
 
   const data = [
