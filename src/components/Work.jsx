@@ -7,7 +7,7 @@ export default function Work() {
       category: 'IoT & Mobile',
       description: 'Revolutionary mobile app that transforms ordinary helmets with LED hardware kits. Complex hardware-software integration delivered seamlessly.',
       technologies: ['Xamarin Forms', 'C#', 'IoT', 'Bluetooth'],
-      image: './assets/work-1.png'
+      image: './assets/lightmode.gif'
     },
     {
       title: 'Journey Planner - LB Foster',
