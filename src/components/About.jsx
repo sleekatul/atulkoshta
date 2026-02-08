@@ -57,6 +57,28 @@ export default function About() {
               />
             ))}
           </div>
+
+                        <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 mt-6">
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center">Quick Stats</h4>
+          <div className="space-y-3">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-700 dark:text-gray-300 text-sm">Experience</span>
+              <span className="font-bold text-purple-600 dark:text-purple-400">15+ Years</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-700 dark:text-gray-300 text-sm">Projects</span>
+              <span className="font-bold text-purple-600 dark:text-purple-400">50+</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-700 dark:text-gray-300 text-sm">Technologies</span>
+              <span className="font-bold text-purple-600 dark:text-purple-400">20+</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-700 dark:text-gray-300 text-sm">Industries</span>
+              <span className="font-bold text-purple-600 dark:text-purple-400">Multiple</span>
+            </div>
+          </div>
+        </div>
         </div>
         </div>
 
