@@ -7,7 +7,7 @@ export default function About() {
     { name: 'sqlserver', icon: './assets/mssql.jpg' },
     { name: 'maui', icon: './assets/maui.webp' },
     { name: 'azure', icon: './assets/azure.svg' },
-    { name: 'git', icon: './assets/git.png' },
+    { name: 'git', icon: './assets/git.svg' },
   ];
 
   const data = [
