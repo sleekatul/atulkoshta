@@ -131,15 +131,6 @@ export default function About() {
             ))}
           </ul>
 
-          <h4 className="my-6 text-gray-700 font-0vo dark:text-white/80">40
-          </h4>
-          <ul className="flex items-center gap-3 sm:gap-5">
-            {tools.map(({ name, icon }, index) => (
-              <li key={index} className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
-                <img src={icon} alt="" className="w-5 sm:w-7" />
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </div>
