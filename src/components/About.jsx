@@ -37,8 +37,7 @@ export default function About() {
       <h2 className="text-center text-5xl font-0vo">About me</h2>
 
       <div className="flex w-full flex-col lg:flex-row items-start gap-20 my-20">
-        <div className="mflex flex-col gap-8 lg:w-80 flex-shrink-0
-                  <div className="relative mx-auto lg:mx-0">
+        <div className="flex flex-col gap-8 lg:w-80 flex-shrink-0">                  <div className="relative mx-auto lg:mx-0">
           <img src="./assets/user-image.png" alt="" className="w-64 sm:w-80 rounded-3xl max-w-none" />
           <div className="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
             <img src="./assets/circular-text.png" alt="" className="w-items-stretch
