@@ -10,8 +10,7 @@ export default function About() {
     { name: 'git', icon: './assets/git.svg' },
         { name: 'entityframework', icon: './assets/ef.png' },
         { name: 'postman', icon: './assets/postman.png' },
-        { name: 'docker', icon: './assets/docker.png' },
-  ];
+    { name: 'visualstudio', icon: './assets/visualstudio.png' },  ];
 
   const data = [
     {
