@@ -374,7 +374,7 @@ export default function Work() {
           aria-modal="true"
         >
           <div
-            className="w-full max-w-3xl bg-white dark:bg-gray-900 rounded-2xl p-6 relative max-h-[85vh] overflow-hidden flex flex-col"
+            className="w-full max-w-4xl bg-white dark:bg-gray-900 rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -385,19 +385,21 @@ export default function Work() {
               <span className="text-xl leading-none text-gray-700 dark:text-gray-200">×</span>
             </button>
 
-            <div className="grid grid-cols-4 gap-2 mb-4 w-full max-w-[240px]">
-              {[1, 2, 3, 4].map((num) => (
-                <div key={num} className="w-12 rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
+            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+              <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
+                {[1, 2, 3, 4].map((num) => (
                   <img
+                    key={num}
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
-                    alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-12 aspect-[9/16] object-cover"
+                    alt=""
+                    className="w-full h-full object-cover"
                   />
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className="absolute inset-0 bg-white/85 dark:bg-gray-900/85 backdrop-blur-sm"></div>
             </div>
 
-            <div className="flex-1 overflow-y-auto pr-1">
+            <div className="relative pr-1">
               <div className="space-y-2 text-gray-700 dark:text-gray-300">
                 {[selectedProject.description, selectedProject.details, ...selectedProject.fullDetails]
                   .filter(Boolean)
@@ -407,7 +409,7 @@ export default function Work() {
               </div>
             </div>
 
-            <div className="pt-4 mt-4 border-t border-gray-200 dark:border-white/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="relative pt-4 mt-4 border-t border-gray-200 dark:border-white/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
