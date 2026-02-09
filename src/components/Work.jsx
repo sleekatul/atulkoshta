@@ -381,24 +381,26 @@ export default function Work() {
               <span className="text-xl leading-none text-gray-700 dark:text-gray-200">×</span>
             </button>
 
-            <div className="flex items-start gap-4 mb-4">
-              <img src={selectedProject.image} alt="" className="w-20 h-20 rounded-lg object-cover" />
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-              {[1, 2, 3, 4].map((num) => (
-                <div key={num} className="rounded-lg border border-gray-200 dark:border-white/20 overflow-hidden">
-                  <img
-                    src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
-                    alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-full aspect-[9/16] object-cover"
-                  />
+            <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-4">
+              <div className="flex items-start gap-4 flex-1">
+                <img src={selectedProject.image} alt="" className="w-16 h-16 rounded-lg object-cover" />
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
                 </div>
-              ))}
+              </div>
+
+              <div className="grid grid-cols-4 gap-2 shrink-0">
+                {[1, 2, 3, 4].map((num) => (
+                  <div key={num} className="w-14 rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
+                    <img
+                      src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
+                      alt={`${selectedProject.title} screenshot ${num}`}
+                      className="w-14 aspect-[9/16] object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="overflow-y-auto max-h-[45vh] pr-1">
