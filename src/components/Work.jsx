@@ -390,13 +390,13 @@ export default function Work() {
               <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
             </div>
 
-            <div className="grid grid-cols-4 gap-2 mb-4 w-full max-w-[320px]">
+            <div className="grid grid-cols-4 gap-2 mb-4 w-full max-w-[280px]">
               {[1, 2, 3, 4].map((num) => (
-                <div key={num} className="w-16 rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
+                <div key={num} className="w-14 rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
                   <img
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
                     alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-16 aspect-[9/16] object-cover"
+                    className="w-14 aspect-[9/16] object-cover"
                   />
                 </div>
               ))}
@@ -412,7 +412,11 @@ export default function Work() {
               </div>
             </div>
 
-            <div className="pt-4 mt-4 border-t border-gray-200 dark:border-white/20">
+            <div className="pt-4 mt-4 border-t border-gray-200 dark:border-white/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {selectedProject.technologies.map((tech, idx) => (
                   <span
