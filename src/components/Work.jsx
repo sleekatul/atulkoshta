@@ -387,16 +387,20 @@ export default function Work() {
 
             <div className="flex flex-col sm:flex-row sm:items-start gap-3 mb-4">
               <div className="min-w-[140px]">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
+                <h4 className="text-xl font-0vo font-semibold text-gray-900 dark:text-white">
+                  {selectedProject.title}
+                </h4>
+                <p className="text-sm font-0vo text-gray-700 dark:text-gray-300">
+                  {selectedProject.category}
+                </p>
               </div>
               <div className="flex flex-wrap gap-2">
-                {[1, 2, 3, 4].map((num) => (
+                {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
                   <img
                     key={num}
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
                     alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-10 aspect-[9/16] object-cover rounded-md border border-gray-200 dark:border-white/20"
+                    className="w-12 aspect-[9/16] object-cover rounded-md border border-gray-200 dark:border-white/20"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
