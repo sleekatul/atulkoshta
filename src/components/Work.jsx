@@ -385,16 +385,24 @@ export default function Work() {
               <span className="text-xl leading-none text-gray-700 dark:text-gray-200">×</span>
             </button>
 
-            <div className="flex flex-wrap gap-2 mb-4">
-              {[1, 2, 3, 4].map((num) => (
-                <div key={num} className="w-10 rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:items-start gap-3 mb-4">
+              <div className="min-w-[140px]">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[1, 2, 3, 4].map((num) => (
                   <img
+                    key={num}
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
                     alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-10 aspect-[9/16] object-cover"
+                    className="w-10 aspect-[9/16] object-cover rounded-md border border-gray-200 dark:border-white/20"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
                   />
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <div className="flex-1 overflow-y-auto pr-1">
@@ -408,10 +416,6 @@ export default function Work() {
             </div>
 
             <div className="pt-4 mt-4 border-t border-gray-200 dark:border-white/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
-              </div>
               <div className="flex flex-wrap gap-2">
                 {selectedProject.technologies.map((tech, idx) => (
                   <span
