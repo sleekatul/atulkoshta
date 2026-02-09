@@ -385,18 +385,13 @@ export default function Work() {
               <span className="text-xl leading-none text-gray-700 dark:text-gray-200">×</span>
             </button>
 
-            <div className="mb-4">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
-            </div>
-
-            <div className="grid grid-cols-4 gap-2 mb-4 w-full max-w-[280px]">
+            <div className="grid grid-cols-4 gap-2 mb-4 w-full max-w-[240px]">
               {[1, 2, 3, 4].map((num) => (
-                <div key={num} className="w-14 rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
+                <div key={num} className="w-12 rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
                   <img
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
                     alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-14 aspect-[9/16] object-cover"
+                    className="w-12 aspect-[9/16] object-cover"
                   />
                 </div>
               ))}
