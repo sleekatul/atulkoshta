@@ -1,6 +1,13 @@
 import { useEffect, useState } from 'react';
 
 export default function Work() {
+  const slugify = (value) =>
+    value
+      .toLowerCase()
+      .replace(/&/g, 'and')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+
   const projects = [
     {
       title: 'LightMode - Smart Helmet',
@@ -14,7 +21,7 @@ export default function Work() {
         'This was a challenging hardware + mobile integration project delivered successfully.',
         'Available on the App Store and Play Store.'
       ],
-      technologies: ['Xamarin Forms', 'C#', 'IoT', 'Bluetooth'],
+      technologies: ['.NET MAUI', 'C#', 'IoT', 'Bluetooth'],
       image: './assets/lightmode.gif'
     },
     {
@@ -30,7 +37,7 @@ export default function Work() {
         'Supports multiple branding variants and shows bus replacement notices.',
         'Provides links to web pages for additional journey information.'
       ],
-      technologies: ['Xamarin Forms', 'C#', 'Web API'],
+      technologies: ['.NET MAUI', 'C#', 'Web API'],
       image: './assets/work-2.png'
     },
     {
@@ -44,7 +51,7 @@ export default function Work() {
         'Helps users connect with running friends, leave feedback, and discover upcoming events.',
         'Searches a catalog approaching 500,000 races.'
       ],
-      technologies: ['Xamarin Forms', 'C#', 'REST API'],
+      technologies: ['.NET MAUI', 'C#', 'REST API'],
       image: './assets/work-3.png'
     },
     {
@@ -58,7 +65,7 @@ export default function Work() {
         'TGS provides end-to-end sporting solutions for colleges and universities.',
         'The ECNL Player App is a core part of that ecosystem.'
       ],
-      technologies: ['Xamarin Forms', 'Azure', 'Push Notifications'],
+      technologies: ['.NET MAUI', 'Azure', 'Push Notifications'],
       image: './assets/work-4.png'
     },
     {
@@ -71,7 +78,7 @@ export default function Work() {
         'A simple app-based system for gated community security at the tap of a button.',
         'Designed for both residents and security personnel with thoughtful, hassle-free workflows.'
       ],
-      technologies: ['Xamarin Forms', 'C#', 'Real-time'],
+      technologies: ['.NET MAUI', 'C#', 'Real-time'],
       image: './assets/work-1.png'
     },
     {
@@ -84,7 +91,7 @@ export default function Work() {
         'iPad app for L.B. Foster UK to create and manage informational messages on display screens across London Tube stations.',
         'Built for iOS iPad deployments across station environments.'
       ],
-      technologies: ['Xamarin Forms', 'iOS', 'Web API'],
+      technologies: ['.NET MAUI', 'iOS', 'Web API'],
       image: './assets/work-2.png'
     },
     {
@@ -97,7 +104,7 @@ export default function Work() {
         'Taritas product that connects users with local people in cities around the world.',
         'A companion app for explorers and travelers who want authentic local insights.'
       ],
-      technologies: ['Xamarin Forms', 'Social', 'Geolocation'],
+      technologies: ['.NET MAUI', 'Social', 'Geolocation'],
       image: './assets/work-3.png'
     },
     {
@@ -110,7 +117,7 @@ export default function Work() {
         'Record, submit, track, and approve business expenses without needing a desktop.',
         'Add expense claims as they happen so receipts are never missed.'
       ],
-      technologies: ['Xamarin Forms', 'Azure', 'CI/CD'],
+      technologies: ['.NET MAUI', 'Azure', 'CI/CD'],
       image: './assets/work-4.png'
     },
     {
@@ -124,7 +131,7 @@ export default function Work() {
         'Captured participant contact details and newsletter subscriptions on-site.',
         'Won first prize at the expo for best and innovative design using technology.'
       ],
-      technologies: ['Xamarin Forms', 'iOS', 'Offline Sync'],
+      technologies: ['.NET MAUI', 'iOS', 'Offline Sync'],
       image: './assets/work-1.png'
     },
     {
@@ -138,7 +145,7 @@ export default function Work() {
         'Known for curry sauces on pizzas and available across four locations in Utah.',
         'A popular choice for customers seeking distinctive, flavorful pizza.'
       ],
-      technologies: ['Xamarin Forms', 'Payments', 'Loyalty'],
+      technologies: ['.NET MAUI', 'Payments', 'Loyalty'],
       image: './assets/work-2.png'
     },
     {
@@ -151,7 +158,7 @@ export default function Work() {
         'Built for a UK timber merchant trade client.',
         'Helps wood cutting businesses manage orders directly from Android devices.'
       ],
-      technologies: ['Xamarin Android', 'C#', 'SQL Server'],
+      technologies: ['.NET MAUI (Android)', 'C#', 'SQL Server'],
       image: './assets/work-3.png'
     },
     {
@@ -164,7 +171,7 @@ export default function Work() {
         'Project management suite covering tasks, budgets, meetings, users, and expenditure tracking.',
         'Built to streamline day-to-day coordination and visibility across teams.'
       ],
-      technologies: ['Xamarin Forms', 'C#', 'Web API'],
+      technologies: ['.NET MAUI', 'C#', 'Web API'],
       image: './assets/work-4.png'
     },
     {
@@ -177,7 +184,7 @@ export default function Work() {
         'Doctor assessment app for capturing medical complaints and prioritizing cases.',
         'Supports fitness evaluations, lifestyle review, and family history-based health checks.'
       ],
-      technologies: ['Xamarin Forms', 'C#', 'Azure'],
+      technologies: ['.NET MAUI', 'C#', 'Azure'],
       image: './assets/work-1.png'
     },
     {
@@ -190,7 +197,7 @@ export default function Work() {
         'ADR reporting app for logging adverse drug reactions with an admin web portal for reports.',
         'Officially launched by AIMS for use across government medical colleges.'
       ],
-      technologies: ['Xamarin Forms', 'Web API', 'Azure'],
+      technologies: ['.NET MAUI', 'Web API', 'Azure'],
       image: './assets/work-2.png'
     },
     {
@@ -204,7 +211,7 @@ export default function Work() {
         'Includes validation, targeted publishing, version control, and dynamic questioning.',
         'Completed forms are submitted and available online for review and PDF export.'
       ],
-      technologies: ['Xamarin Forms', 'HTML', 'JavaScript'],
+      technologies: ['.NET MAUI', 'HTML', 'JavaScript'],
       image: './assets/work-3.png'
     },
     {
@@ -217,7 +224,7 @@ export default function Work() {
         'Manage and search benefit elections for employees, families, and beneficiaries.',
         'Designed to simplify enrollment choices and access to benefit details.'
       ],
-      technologies: ['Xamarin Forms', 'C#', 'Web API'],
+      technologies: ['.NET MAUI', 'C#', 'Web API'],
       image: './assets/work-4.png'
     },
     {
@@ -230,7 +237,7 @@ export default function Work() {
         'Tracks daily working hours by project with billable, non-billable, time-off, and overtime entries.',
         'Helps teams capture accurate time data without friction.'
       ],
-      technologies: ['Xamarin Forms', 'C#'],
+      technologies: ['.NET MAUI', 'C#'],
       image: './assets/work-1.png'
     },
     {
@@ -240,7 +247,7 @@ export default function Work() {
       details:
         'Concept/project showcased in the Taritas portfolio.',
       fullDetails: ['Concept app showcased in the Taritas portfolio.'],
-      technologies: ['Xamarin Forms', 'C#'],
+      technologies: ['.NET MAUI', 'C#'],
       image: './assets/work-2.png'
     },
     {
@@ -250,7 +257,7 @@ export default function Work() {
       details:
         'Travel-focused app concept showcased in the Taritas portfolio.',
       fullDetails: ['Travel app concept showcased in the Taritas portfolio.'],
-      technologies: ['Xamarin Forms', 'C#'],
+      technologies: ['.NET MAUI', 'C#'],
       image: './assets/work-3.png'
     },
     {
@@ -260,7 +267,7 @@ export default function Work() {
       details:
         'Music-focused community app showcased in the Taritas portfolio.',
       fullDetails: ['Music community app concept showcased in the Taritas portfolio.'],
-      technologies: ['Xamarin Forms', 'C#'],
+      technologies: ['.NET MAUI', 'C#'],
       image: './assets/work-4.png'
     }
   ];
@@ -388,6 +395,18 @@ export default function Work() {
                 .map((line, idx) => (
                   <p key={idx}>{line}</p>
                 ))}
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              {[1, 2, 3, 4].map((num) => (
+                <div key={num} className="rounded-lg border border-gray-200 dark:border-white/20 overflow-hidden">
+                  <img
+                    src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
+                    alt={`${selectedProject.title} screenshot ${num}`}
+                    className="w-full h-28 object-cover"
+                  />
+                </div>
+              ))}
             </div>
 
             <div className="flex flex-wrap gap-2">

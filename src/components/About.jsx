@@ -75,7 +75,7 @@ export default function About() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-700 dark:text-gray-300 text-sm">Industries</span>
-              <span className="font-bold text-purple-600 dark:text-purple-400">Healthcare, Transit, IoT</span>
+              <span className="font-bold text-purple-600 dark:text-purple-400">Multiple</span>
             </div>
           </div>
         </div>
