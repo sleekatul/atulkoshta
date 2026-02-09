@@ -385,12 +385,9 @@ export default function Work() {
               <span className="text-xl leading-none text-gray-700 dark:text-gray-200">×</span>
             </button>
 
-            <div className="flex items-start gap-4 mb-4">
-              <img src={selectedProject.image} alt="" className="w-16 h-16 rounded-lg object-cover" />
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
-              </div>
+            <div className="mb-4">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
             </div>
 
             <div className="grid grid-cols-4 gap-2 mb-4 w-full max-w-[320px]">
