@@ -3,7 +3,7 @@ export default function WhyChooseMe() {
     {
       icon: '🎯',
       title: 'Proven Track Record',
-      description: '15+ years delivering complex solutions across diverse industries. Over 50 successful projects spanning enterprise applications, mobile solutions, and cloud platforms.'
+      description: '15+ years delivering complex solutions across diverse industries. 50+ successful projects spanning enterprise and mobile solutions.'
     },
     {
       icon: '🚀',
@@ -18,12 +18,12 @@ export default function WhyChooseMe() {
     {
       icon: '🏆',
       title: 'Award-Winning Solutions',
-      description: 'Developed applications recognized at international expos. Built systems managing billions in transactions and serving millions of users with high reliability.'
+      description: 'Developed applications recognized at RailTex Europe for innovative design and industry impact.'
     },
     {
       icon: '🤝',
       title: 'End-to-End Ownership',
-      description: 'Full-cycle development expertise from requirements analysis to deployment. Experienced in leading teams, mentoring developers, and ensuring project success.'
+      description: 'Full-cycle development from requirements to deployment. Experience leading teams, mentoring developers, and training staff on Xamarin Forms.'
     },
     {
       icon: '⚡',

@@ -2,7 +2,7 @@ export default function Services() {
   const services = [
     {
       title: 'Cross-Platform Mobile Development',
-      description: 'Expert in building native-quality iOS and Android apps using Xamarin Forms and .NET MAUI. 50+ apps delivered across 16+ industries with seamless performance.',
+      description: 'Expert in building native-quality iOS and Android apps using Xamarin Forms and .NET MAUI. 50+ projects delivered across healthcare, transportation, sports, IoT, and enterprise.',
       icon: './assets/web-icon.png',
       iconDark: './assets/web-icon-dark.png'
     },

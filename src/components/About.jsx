@@ -22,13 +22,13 @@ export default function About() {
       name: 'Core Technologies',
       icon1: './assets/edu-icon.png',
       icon2: './assets/edu-icon-dark.png',
-      description: 'C#, .NET, .NET Core, XAML, Xamarin Forms, .NET MAUI, Entity Framework, SQL Server, Web API',
+      description: 'C#, XAML, .NET/.NET Core, Xamarin Forms, .NET MAUI, Entity Framework, MSSQL, Web API',
     },
     {
       name: 'Specialization',
       icon1: './assets/project-icon.png',
       icon2: './assets/project-icon-dark.png',
-      description: 'Cross-platform mobile apps (iOS/Android), Enterprise solutions, MVVM architecture, Custom controls, IoT integration',
+      description: 'Cross-platform mobile apps (iOS/Android), MVVM architecture, enterprise solutions, custom controls',
     },
   ];
 
@@ -45,7 +45,7 @@ export default function About() {
           </div>
                 </div>
 
-              <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6">
+      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6">
           <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Tools I Use</h4>
           <div className="flex flex-wrap gap-3 justify-center">
             {tools.map((tool, index) => (
@@ -70,12 +70,12 @@ export default function About() {
               <span className="font-bold text-purple-600 dark:text-purple-400">50+</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-gray-700 dark:text-gray-300 text-sm">Technologies</span>
-              <span className="font-bold text-purple-600 dark:text-purple-400">20+</span>
+              <span className="text-gray-700 dark:text-gray-300 text-sm">Tools & Frameworks</span>
+              <span className="font-bold text-purple-600 dark:text-purple-400">15+</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-700 dark:text-gray-300 text-sm">Industries</span>
-              <span className="font-bold text-purple-600 dark:text-purple-400">Multiple</span>
+              <span className="font-bold text-purple-600 dark:text-purple-400">Healthcare, Transit, IoT</span>
             </div>
           </div>
         </div>
@@ -85,7 +85,9 @@ export default function About() {
         <div className="flex-1">
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Professional Overview</h3>
           <p className="mb-6 max-w-2xl font-0vo text-gray-700 dark:text-gray-300">
-            With over 15 years of hands-on experience in custom software development, I specialize in creating robust, scalable enterprise solutions using C# and .NET technologies. From the early days of Xamarin Forms to the latest .NET MAUI releases, I've been at the forefront of cross-platform mobile development.
+            With 15+ years of hands-on experience, I specialize in C#, .NET, and Xamarin Forms/MAUI to deliver
+            robust, scalable enterprise and mobile solutions. I’ve worked across every major Xamarin Forms release
+            and moved to .NET MAUI from day one, building consistent, high-performance apps for iOS and Android.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-3 mt-8">Key Achievements</h3>
@@ -96,40 +98,42 @@ export default function About() {
             </li>
             <li className="flex items-start">
               <span className="text-purple-600 mr-2 mt-1 flex-shrink-0">•</span>
-              <span>Developed award-winning expo applications recognized at RailTex Europe for best innovative design</span>
+              <span>Developed award-winning expo applications recognized at RailTex Europe for innovative design</span>
             </li>
             <li className="flex items-start">
               <span className="text-purple-600 mr-2 mt-1 flex-shrink-0">•</span>
-              <span>Architected large-scale railway systems deployed across UK stations serving thousands of daily users</span>
+              <span>Built rail and transit systems deployed across UK stations (journey planning and live updates)</span>
             </li>
             <li className="flex items-start">
               <span className="text-purple-600 mr-2 mt-1 flex-shrink-0">•</span>
-              <span>Built mission-critical enterprise solutions with offline-first architectures and real-time synchronization</span>
+              <span>Delivered healthcare and enterprise apps, including ADR reporting launched by AIMS for medical colleges</span>
             </li>
           </ul>
 
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-3 mt-8">Development Philosophy</h3>
           <p className="mb-6 max-w-2xl font-0vo text-gray-700 dark:text-gray-300">
-            I'm passionate about writing clean, maintainable code following SOLID principles and MVVM patterns. My approach combines technical excellence with strong problem-solving skills, enabling me to tackle complex challenges and deliver solutions that exceed expectations.
+            I write clean, maintainable code grounded in SOLID principles and MVVM. I’m thorough in technical and
+            analytical thinking, quick to learn, and known for solving complex problems through the right questions
+            and a clear technical plan.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-3 mt-8">Core Competencies</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 max-w-2xl">
             <div className="flex items-start">
               <span className="text-purple-600 mr-2 mt-1 flex-shrink-0">✓</span>
-              <span className="text-gray-700 dark:text-gray-300">Cross-platform mobile development (iOS/Android)</span>
+              <span className="text-gray-700 dark:text-gray-300">Xamarin Forms and .NET MAUI (iOS/Android)</span>
             </div>
             <div className="flex items-start">
               <span className="text-purple-600 mr-2 mt-1 flex-shrink-0">✓</span>
-              <span className="text-gray-700 dark:text-gray-300">Enterprise architecture & solution design</span>
+              <span className="text-gray-700 dark:text-gray-300">Enterprise architecture and solution design</span>
             </div>
             <div className="flex items-start">
               <span className="text-purple-600 mr-2 mt-1 flex-shrink-0">✓</span>
-              <span className="text-gray-700 dark:text-gray-300">RESTful API development & integration</span>
+              <span className="text-gray-700 dark:text-gray-300">RESTful API development and integration</span>
             </div>
             <div className="flex items-start">
               <span className="text-purple-600 mr-2 mt-1 flex-shrink-0">✓</span>
-              <span className="text-gray-700 dark:text-gray-300">Database design & optimization</span>
+              <span className="text-gray-700 dark:text-gray-300">Database design and offline-first sync</span>
             </div>
             <div className="flex items-start">
               <span className="text-purple-600 mr-2 mt-1 flex-shrink-0">✓</span>
@@ -137,7 +141,7 @@ export default function About() {
             </div>
             <div className="flex items-start">
               <span className="text-purple-600 mr-2 mt-1 flex-shrink-0">✓</span>
-              <span className="text-gray-700 dark:text-gray-300">Agile/Scrum methodology</span>
+              <span className="text-gray-700 dark:text-gray-300">Agile and Scrum methodology</span>
             </div>
           </div>
 
