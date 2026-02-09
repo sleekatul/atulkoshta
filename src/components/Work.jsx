@@ -393,13 +393,13 @@ export default function Work() {
               </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-2 mb-4">
+            <div className="grid grid-cols-4 gap-2 mb-4 w-full max-w-[320px]">
               {[1, 2, 3, 4].map((num) => (
-                <div key={num} className="rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
+                <div key={num} className="w-16 rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
                   <img
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
                     alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-full aspect-[9/16] object-cover"
+                    className="w-16 aspect-[9/16] object-cover"
                   />
                 </div>
               ))}
@@ -426,17 +426,6 @@ export default function Work() {
                   </span>
                 ))}
               </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {selectedProject.technologies.map((tech, idx) => (
-                <span
-                  key={idx}
-                  className="text-sm px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
-                >
-                  {tech}
-                </span>
-              ))}
             </div>
           </div>
         </div>
