@@ -374,7 +374,7 @@ export default function Work() {
           aria-modal="true"
         >
           <div
-            className="w-full max-w-3xl bg-white dark:bg-gray-900 rounded-2xl p-6 relative max-h-[85vh] overflow-hidden"
+            className="w-full max-w-3xl bg-white dark:bg-gray-900 rounded-2xl p-6 relative max-h-[85vh] overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -393,7 +393,7 @@ export default function Work() {
               </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-3 mb-4">
+            <div className="grid grid-cols-4 gap-2 mb-4">
               {[1, 2, 3, 4].map((num) => (
                 <div key={num} className="rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
                   <img
@@ -405,13 +405,26 @@ export default function Work() {
               ))}
             </div>
 
-            <div className="overflow-y-auto max-h-[45vh] pr-1">
+            <div className="flex-1 overflow-y-auto pr-1">
               <div className="space-y-2 text-gray-700 dark:text-gray-300">
                 {[selectedProject.description, selectedProject.details, ...selectedProject.fullDetails]
                   .filter(Boolean)
                   .map((line, idx) => (
                     <p key={idx}>{line}</p>
                   ))}
+              </div>
+            </div>
+
+            <div className="pt-4 mt-4 border-t border-gray-200 dark:border-white/20">
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="text-sm px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
 
