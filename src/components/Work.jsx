@@ -374,7 +374,7 @@ export default function Work() {
           aria-modal="true"
         >
           <div
-            className="w-full max-w-4xl rounded-2xl relative max-h-[90vh] overflow-y-auto"
+            className="w-full max-w-4xl bg-white dark:bg-gray-900 rounded-2xl p-6 relative max-h-[90vh] overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -385,46 +385,42 @@ export default function Work() {
               <span className="text-xl leading-none text-gray-700 dark:text-gray-200">×</span>
             </button>
 
-            <div className="absolute inset-0 rounded-2xl overflow-hidden">
-              <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
-                {[1, 2, 3, 4].map((num) => (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {[1, 2, 3, 4].map((num) => (
+                <div key={num} className="w-10 rounded-md border border-gray-200 dark:border-white/20 overflow-hidden">
                   <img
-                    key={num}
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
-                    alt=""
-                    className="w-full h-full object-cover"
+                    alt={`${selectedProject.title} screenshot ${num}`}
+                    className="w-10 aspect-[9/16] object-cover"
                   />
-                ))}
-              </div>
-              <div className="absolute inset-0 bg-white/85 dark:bg-gray-900/85 backdrop-blur-sm"></div>
+                </div>
+              ))}
             </div>
 
-            <div className="relative p-6">
-              <div className="pr-1">
-                <div className="space-y-2 text-gray-700 dark:text-gray-300">
-                  {[selectedProject.description, selectedProject.details, ...selectedProject.fullDetails]
-                    .filter(Boolean)
-                    .map((line, idx) => (
-                      <p key={idx}>{line}</p>
-                    ))}
-                </div>
-              </div>
-
-              <div className="pt-4 mt-4 border-t border-gray-200 dark:border-white/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="text-sm px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
-                    >
-                      {tech}
-                    </span>
+            <div className="flex-1 overflow-y-auto pr-1">
+              <div className="space-y-2 text-gray-700 dark:text-gray-300">
+                {[selectedProject.description, selectedProject.details, ...selectedProject.fullDetails]
+                  .filter(Boolean)
+                  .map((line, idx) => (
+                    <p key={idx}>{line}</p>
                   ))}
-                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 mt-4 border-t border-gray-200 dark:border-white/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{selectedProject.title}</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{selectedProject.category}</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="text-sm px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
