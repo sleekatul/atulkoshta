@@ -58,7 +58,7 @@ export default function About() {
             ))}
           </div>
 
-                        <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 mt-6">
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 mt-6">
           <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center">Quick Stats</h4>
           <div className="space-y-3">
             <div className="flex justify-between items-center">
