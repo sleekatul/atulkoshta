@@ -400,7 +400,7 @@ export default function Work() {
                     key={num}
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
                     alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-12 aspect-[9/16] object-cover rounded-md border border-gray-200 dark:border-white/20"
+                    className="w-14 aspect-[9/16] object-cover rounded-md border border-gray-200 dark:border-white/20"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
