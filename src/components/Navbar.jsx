@@ -60,7 +60,10 @@ export default function Navbar() {
           isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20' : ''
         }`}
       >
-        <div className="text-2xl font-bold cursor-pointer mr-14 dark:text-white">Atul Koshta</div>
+        <div className="mr-14 cursor-pointer">
+          <img src="./assets/logo.png" alt="Logo" className="w-10 h-10 dark:hidden" />
+          <img src="./assets/logo_dark.png" alt="Logo" className="w-10 h-10 hidden dark:block" />
+        </div>
 
         <ul
           ref={navLinks}
