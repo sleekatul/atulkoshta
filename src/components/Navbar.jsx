@@ -60,9 +60,9 @@ export default function Navbar() {
           isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20' : ''
         }`}
       >
-        <div className="mr-14 cursor-pointer">
-          <img src="./assets/logo.png" alt="Logo" className="w-10 h-10 dark:hidden" />
-          <img src="./assets/logo_dark.png" alt="Logo" className="w-10 h-10 hidden dark:block" />
+        <div className="mr-14 cursor-pointer flex items-center">
+          <img src="./assets/logo.png" alt="Logo" className="w-36 mx-auto dark:hidden" />
+          <img src="./assets/logo_dark.png" alt="Logo" className="w-36 mx-auto hidden dark:block" />
         </div>
 
         <ul
