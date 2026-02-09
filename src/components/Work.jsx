@@ -385,28 +385,27 @@ export default function Work() {
               <span className="text-xl leading-none text-gray-700 dark:text-gray-200">×</span>
             </button>
 
-            <div className="flex flex-col sm:flex-row sm:items-start gap-3 mb-4">
-              <div className="min-w-[140px]">
-                <h4 className="text-xl font-0vo font-semibold text-gray-900 dark:text-white">
-                  {selectedProject.title}
-                </h4>
-                <p className="text-sm font-0vo text-gray-700 dark:text-gray-300">
-                  {selectedProject.category}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
+            <div className="mb-3">
+              <h3 className="text-2xl font-0vo font-semibold text-gray-900 dark:text-white">
+                {selectedProject.title}
+              </h3>
+              <p className="text-sm font-0vo text-gray-700 dark:text-gray-300">
+                {selectedProject.category}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-4">
                 {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
                   <img
                     key={num}
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
                     alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-14 aspect-[9/16] object-cover rounded-md border border-gray-200 dark:border-white/20"
+                    className="w-20 aspect-[9/16] object-cover rounded-md border border-gray-200 dark:border-white/20"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
                   />
                 ))}
-              </div>
             </div>
 
             <div className="flex-1 overflow-y-auto pr-1">
