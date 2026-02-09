@@ -370,7 +370,7 @@ export default function Work() {
           aria-modal="true"
         >
           <div
-            className="w-full max-w-2xl bg-white dark:bg-gray-900 rounded-2xl p-6 relative max-h-[75vh] overflow-y-auto"
+            className="w-full max-w-3xl bg-white dark:bg-gray-900 rounded-2xl p-6 relative max-h-[85vh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -389,24 +389,26 @@ export default function Work() {
               </div>
             </div>
 
-            <div className="mb-5 space-y-2 text-gray-700 dark:text-gray-300">
-              {[selectedProject.description, selectedProject.details, ...selectedProject.fullDetails]
-                .filter(Boolean)
-                .map((line, idx) => (
-                  <p key={idx}>{line}</p>
-                ))}
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
               {[1, 2, 3, 4].map((num) => (
                 <div key={num} className="rounded-lg border border-gray-200 dark:border-white/20 overflow-hidden">
                   <img
                     src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
                     alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-full h-28 object-cover"
+                    className="w-full aspect-[9/16] object-cover"
                   />
                 </div>
               ))}
+            </div>
+
+            <div className="overflow-y-auto max-h-[45vh] pr-1">
+              <div className="space-y-2 text-gray-700 dark:text-gray-300">
+                {[selectedProject.description, selectedProject.details, ...selectedProject.fullDetails]
+                  .filter(Boolean)
+                  .map((line, idx) => (
+                    <p key={idx}>{line}</p>
+                  ))}
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-2">
