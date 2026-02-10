@@ -25,20 +25,19 @@ export default function Work() {
       image: './assets/lightmode.gif'
     },
     {
-      title: 'Journey Planner - LB Foster',
-      category: 'Transportation',
-      description: 'Railway journey planner for UK stations with real-time updates, cancellations, platform changes, and interactive maps.',
+      title: 'Dicip',
+      category: 'Education',
+      description: 'Offline-first student curriculum platform for schools, built with .NET MAUI.',
       details:
-        'Deployed on station totem machines across UK platforms. Includes planner, arrivals/departures, service alerts, maps, and branding variants per client needs.',
+        'Teachers manage activities, goals, and tasks, while students track assignments and completion from any device.',
       fullDetails: [
-        'Railway journey planner used across UK stations on platform totem machines.',
-        'Modules include planner, arrivals, departures, feedback, and maps.',
-        'Passengers can search stations, plan journeys, and view real-time service updates.',
-        'Supports multiple branding variants and shows bus replacement notices.',
-        'Provides links to web pages for additional journey information.'
+        'Designed for schools to deliver curriculum content and daily learning workflows.',
+        'Teachers can create activities, set goals, assign tasks, and monitor progress.',
+        'Students can view assignments, track tasks, and update completion status.',
+        'Offline sync keeps data consistent between devices and the server when connectivity returns.'
       ],
-      technologies: ['.NET MAUI', 'C#', 'Web API'],
-      image: './assets/work-2.png'
+      technologies: ['.NET MAUI', 'C#', 'SQLite', 'Offline Sync', 'Web API'],
+      image: './assets/work-4.png'
     },
     {
       title: 'Run America',
@@ -80,19 +79,6 @@ export default function Work() {
       ],
       technologies: ['.NET MAUI', 'C#', 'Real-time'],
       image: './assets/work-1.png'
-    },
-    {
-      title: 'OIS - London Tube',
-      category: 'Infrastructure',
-      description: 'iPad app managing informational messages on display screens across London Tube Stations.',
-      details:
-        'L.B. Foster UK iPad app to create and manage station display messages across the London Tube network.',
-      fullDetails: [
-        'iPad app for L.B. Foster UK to create and manage informational messages on display screens across London Tube stations.',
-        'Built for iOS iPad deployments across station environments.'
-      ],
-      technologies: ['.NET MAUI', 'iOS', 'Web API'],
-      image: './assets/work-2.png'
     },
     {
       title: 'City - Travel Companion',
@@ -175,21 +161,6 @@ export default function Work() {
       image: './assets/work-4.png'
     },
     {
-      title: 'Dicip',
-      category: 'Education',
-      description: 'Offline-first student curriculum platform for schools, built with .NET MAUI.',
-      details:
-        'Teachers manage activities, goals, and tasks, while students track assignments and completion from any device.',
-      fullDetails: [
-        'Designed for schools to deliver curriculum content and daily learning workflows.',
-        'Teachers can create activities, set goals, assign tasks, and monitor progress.',
-        'Students can view assignments, track tasks, and update completion status.',
-        'Offline sync keeps data consistent between devices and the server when connectivity returns.'
-      ],
-      technologies: ['.NET MAUI', 'C#', 'SQLite', 'Offline Sync', 'Web API'],
-      image: './assets/work-4.png'
-    },
-    {
       title: 'Timesheet',
       category: 'Productivity',
       description: 'Mobile timesheet app for tracking daily work hours with billable, non-billable, time-off, and overtime entries.',
@@ -214,19 +185,6 @@ export default function Work() {
       ],
       technologies: ['.NET MAUI', 'C#', 'Azure'],
       image: './assets/work-1.png'
-    },
-    {
-      title: 'Benefit Expressway',
-      category: 'HR & Benefits',
-      description: 'Platform to manage and search benefit elections for customers, family members, and beneficiaries.',
-      details:
-        'Benefit elections and enrollment management for employees, families, and beneficiaries.',
-      fullDetails: [
-        'Manage and search benefit elections for employees, families, and beneficiaries.',
-        'Designed to simplify enrollment choices and access to benefit details.'
-      ],
-      technologies: ['.NET MAUI', 'C#', 'Web API'],
-      image: './assets/work-4.png'
     },
     {
       title: 'ADR Reporting',
@@ -283,6 +241,48 @@ export default function Work() {
         'Music-focused community app showcased in the Taritas portfolio.',
       fullDetails: ['Music community app concept showcased in the Taritas portfolio.'],
       technologies: ['.NET MAUI', 'C#'],
+      image: './assets/work-4.png'
+    },
+    {
+      title: 'Journey Planner - LB Foster',
+      category: 'Transportation',
+      description: 'Railway journey planner for UK stations with real-time updates, cancellations, platform changes, and interactive maps.',
+      details:
+        'Deployed on station totem machines across UK platforms. Includes planner, arrivals/departures, service alerts, maps, and branding variants per client needs.',
+      fullDetails: [
+        'Railway journey planner used across UK stations on platform totem machines.',
+        'Modules include planner, arrivals, departures, feedback, and maps.',
+        'Passengers can search stations, plan journeys, and view real-time service updates.',
+        'Supports multiple branding variants and shows bus replacement notices.',
+        'Provides links to web pages for additional journey information.'
+      ],
+      technologies: ['.NET MAUI', 'C#', 'Web API'],
+      image: './assets/work-2.png'
+    },
+    {
+      title: 'OIS - London Tube',
+      category: 'Infrastructure',
+      description: 'iPad app managing informational messages on display screens across London Tube Stations.',
+      details:
+        'L.B. Foster UK iPad app to create and manage station display messages across the London Tube network.',
+      fullDetails: [
+        'iPad app for L.B. Foster UK to create and manage informational messages on display screens across London Tube stations.',
+        'Built for iOS iPad deployments across station environments.'
+      ],
+      technologies: ['.NET MAUI', 'iOS', 'Web API'],
+      image: './assets/work-2.png'
+    },
+    {
+      title: 'Benefit Expressway',
+      category: 'HR & Benefits',
+      description: 'Platform to manage and search benefit elections for customers, family members, and beneficiaries.',
+      details:
+        'Benefit elections and enrollment management for employees, families, and beneficiaries.',
+      fullDetails: [
+        'Manage and search benefit elections for employees, families, and beneficiaries.',
+        'Designed to simplify enrollment choices and access to benefit details.'
+      ],
+      technologies: ['.NET MAUI', 'C#', 'Web API'],
       image: './assets/work-4.png'
     }
   ];
