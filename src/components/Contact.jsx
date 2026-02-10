@@ -51,7 +51,7 @@ export default function Contact() {
         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
       </p>
 
-      <div className="flex flex-col lg:flex-row items-center gap-10 my-10">
+      <div className="flex flex-col lg:flex-row items-start gap-10 my-10">
         <div className="flex-1">
           <form onSubmit={onSubmit} className="flex flex-col gap-6">
             <div className="flex gap-6">
