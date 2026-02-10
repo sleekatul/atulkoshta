@@ -3,7 +3,7 @@ export default function Contact() {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY_HERE");
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "");
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
@@ -84,7 +84,7 @@ export default function Contact() {
             <img src="./assets/location_icon_dark.png" alt="" className="w-7 mt-1 hidden dark:block" />
             <div>
               <h3 className="font-medium text-lg">Location</h3>
-              <p className="text-gray-600 dark:text-white/80">Indore, Madhya Pradesh, India</p>
+              <p className="text-gray-600 dark:text-white/80">Jabalpur, Madhya Pradesh, India</p>
             </div>
           </div>
 
