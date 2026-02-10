@@ -1,25 +1,45 @@
+import { useState } from 'react';
+
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
+
   const onSubmit = async (event) => {
     event.preventDefault();
+    if (!accessKey) {
+      setStatusMessage('Missing Web3Forms access key. Set VITE_WEB3FORMS_ACCESS_KEY in your .env file.');
+      return;
+    }
+    setIsSubmitting(true);
+    setStatusMessage('');
     const formData = new FormData(event.target);
 
-    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "");
+    formData.append("access_key", accessKey);
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: json
-    }).then((res) => res.json());
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      }).then((res) => res.json());
 
-    if (res.success) {
-      alert("Message sent successfully!");
-      event.target.reset();
+      if (res.success) {
+        setStatusMessage('Message sent successfully!');
+        event.target.reset();
+      } else {
+        setStatusMessage(res.message || 'Submission failed. Please try again.');
+      }
+    } catch (err) {
+      setStatusMessage('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -59,11 +79,15 @@ export default function Contact() {
             ></textarea>
             <button
               type="submit"
-              className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover"
+              className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={isSubmitting}
             >
-              Submit now
+              {isSubmitting ? 'Sending...' : 'Submit now'}
               <img src="./assets/right-arrow-white.png" alt="" className="w-4" />
             </button>
+            {statusMessage && (
+              <p className="text-center text-sm text-gray-700 dark:text-gray-300">{statusMessage}</p>
+            )}
           </form>
         </div>
 
