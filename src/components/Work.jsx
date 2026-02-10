@@ -8,7 +8,8 @@ export default function Work() {
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)+/g, '');
 
-  const projects = [    {
+  const projects = [
+    {
       title: 'LightMode - Smart Helmet',
       category: 'IoT & Mobile',
       description: 'Revolutionary mobile app that transforms ordinary helmets with LED hardware kits. Complex hardware-software integration delivered seamlessly.',
@@ -22,6 +23,22 @@ export default function Work() {
       ],
       technologies: ['.NET MAUI', 'C#', 'IoT', 'Bluetooth'],
       image: './assets/lightmode.gif'
+    },
+    {
+      title: 'Journey Planner - LB Foster',
+      category: 'Transportation',
+      description: 'Railway journey planner for UK stations with real-time updates, cancellations, platform changes, and interactive maps.',
+      details:
+        'Deployed on station totem machines across UK platforms. Includes planner, arrivals/departures, service alerts, maps, and branding variants per client needs.',
+      fullDetails: [
+        'Railway journey planner used across UK stations on platform totem machines.',
+        'Modules include planner, arrivals, departures, feedback, and maps.',
+        'Passengers can search stations, plan journeys, and view real-time service updates.',
+        'Supports multiple branding variants and shows bus replacement notices.',
+        'Provides links to web pages for additional journey information.'
+      ],
+      technologies: ['.NET MAUI', 'C#', 'Web API'],
+      image: './assets/work-2.png'
     },
     {
       title: 'Run America',
@@ -63,6 +80,19 @@ export default function Work() {
       ],
       technologies: ['.NET MAUI', 'C#', 'Real-time'],
       image: './assets/work-1.png'
+    },
+    {
+      title: 'OIS - London Tube',
+      category: 'Infrastructure',
+      description: 'iPad app managing informational messages on display screens across London Tube Stations.',
+      details:
+        'L.B. Foster UK iPad app to create and manage station display messages across the London Tube network.',
+      fullDetails: [
+        'iPad app for L.B. Foster UK to create and manage informational messages on display screens across London Tube stations.',
+        'Built for iOS iPad deployments across station environments.'
+      ],
+      technologies: ['.NET MAUI', 'iOS', 'Web API'],
+      image: './assets/work-2.png'
     },
     {
       title: 'City - Travel Companion',
@@ -186,6 +216,19 @@ export default function Work() {
       image: './assets/work-1.png'
     },
     {
+      title: 'Benefit Expressway',
+      category: 'HR & Benefits',
+      description: 'Platform to manage and search benefit elections for customers, family members, and beneficiaries.',
+      details:
+        'Benefit elections and enrollment management for employees, families, and beneficiaries.',
+      fullDetails: [
+        'Manage and search benefit elections for employees, families, and beneficiaries.',
+        'Designed to simplify enrollment choices and access to benefit details.'
+      ],
+      technologies: ['.NET MAUI', 'C#', 'Web API'],
+      image: './assets/work-4.png'
+    },
+    {
       title: 'ADR Reporting',
       category: 'Healthcare',
       description: 'Adverse drug reaction reporting app officially launched by AIMS for government medical colleges nationwide.',
@@ -242,48 +285,47 @@ export default function Work() {
       technologies: ['.NET MAUI', 'C#'],
       image: './assets/work-4.png'
     }
-    {
-      title: 'Journey Planner - LB Foster',
-      category: 'Transportation',
-      description: 'Railway journey planner for UK stations with real-time updates, cancellations, platform changes, and interactive maps.',
-      details:
-        'Deployed on station totem machines across UK platforms. Includes planner, arrivals/departures, service alerts, maps, and branding variants per client needs.',
-      fullDetails: [
-        'Railway journey planner used across UK stations on platform totem machines.',
-        'Modules include planner, arrivals, departures, feedback, and maps.',
-        'Passengers can search stations, plan journeys, and view real-time service updates.',
-        'Supports multiple branding variants and shows bus replacement notices.',
-        'Provides links to web pages for additional journey information.'
-      ],
-      technologies: ['.NET MAUI', 'C#', 'Web API'],
-      image: './assets/work-2.png'
-    },
-    {
-      title: 'OIS - London Tube',
-      category: 'Infrastructure',
-      description: 'iPad app managing informational messages on display screens across London Tube Stations.',
-      details:
-        'L.B. Foster UK iPad app to create and manage station display messages across the London Tube network.',
-      fullDetails: [
-        'iPad app for L.B. Foster UK to create and manage informational messages on display screens across London Tube stations.',
-        'Built for iOS iPad deployments across station environments.'
-      ],
-      technologies: ['.NET MAUI', 'iOS', 'Web API'],
-      image: './assets/work-2.png'
-    },
-    {
-      title: 'Benefit Expressway',
-      category: 'HR & Benefits',
-      description: 'Platform to manage and search benefit elections for customers, family members, and beneficiaries.',
-      details:
-        'Benefit elections and enrollment management for employees, families, and beneficiaries.',
-      fullDetails: [
-        'Manage and search benefit elections for employees, families, and beneficiaries.',
-        'Designed to simplify enrollment choices and access to benefit details.'
-      ],
-      technologies: ['.NET MAUI', 'C#', 'Web API'],
-      image: './assets/work-4.png'
-    },];
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(4);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [availableScreenshots, setAvailableScreenshots] = useState([]);
+
+  const nextProject = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
+
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedProject(null);
+      }
+    };
+    if (selectedProject) {
+      document.addEventListener('keydown', handleEsc);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEsc);
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
+
+  useEffect(() => {
+    if (!selectedProject) {
+      setAvailableScreenshots([]);
+      return;
+    }
+
+    let isActive = true;
+    const base = slugify(selectedProject.title);
+    const urls = Array.from({ length: 12 }, (_, i) => `./assets/${base}-${i + 1}.png`);
+    const loaded = [];
     let remaining = urls.length;
 
     const finish = () => {
