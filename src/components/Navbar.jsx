@@ -79,7 +79,7 @@ export default function Navbar() {
             <a href="#case-study">Case Study</a>
           </li>
           <li>
-            <a href="#why-choose-me">Why Atul</a>
+            <a href="#why-choose-me">Why me?</a>
           </li>
           <li>
             <a href="#services">Services</a>
