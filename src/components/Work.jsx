@@ -362,7 +362,7 @@ export default function Work() {
         {projects.slice(currentIndex, currentIndex + cardsToShow).map((project, index) => (
           <div
             key={index}
-            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group bg-gray-100"
             style={{
               backgroundImage: `url(./assets/${slugify(project.title)}-1.png), url(${project.image})`,
               backgroundSize: 'cover, cover',
