@@ -69,6 +69,10 @@ export default function Work() {
         'TGS provides end-to-end sporting solutions for colleges and universities.',
         'The ECNL Player App is a core part of that ecosystem.'
       ],
+      links: [
+        { label: 'App Store', href: 'https://apps.apple.com/us/app/ecnl/id1159319693', icon: './assets/appstore.svg' },
+        { label: 'Play Store', href: 'https://play.google.com/store/apps/details?id=com.totalglobalsports.ecnlleague&hl=en_IN', icon: './assets/playstore.svg' }
+      ],
       technologies: ['.NET MAUI', 'Azure', 'Push Notifications'],
       image: './assets/work-4.png'
     },
