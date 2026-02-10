@@ -86,7 +86,7 @@ export default function About() {
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Professional Overview</h3>
           <p className="mb-6 max-w-2xl font-0vo text-gray-700 dark:text-gray-300">
             With 15+ years of experience building enterprise and SaaS solutions in .NET/C#, I’ve delivered full-stack
-            systems covering web apps, backend APIs, and database layers. I also bring deep cross-platform mobile
+            systems covering web apps, backend APIs, and database layers. I bring deep cross-platform mobile
             development expertise, creating high-quality, immersive user experiences across iOS and Android. My
             portfolio includes a wide range of feature-rich applications tailored to diverse clients and industries.
           </p>
