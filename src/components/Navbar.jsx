@@ -79,6 +79,9 @@ export default function Navbar() {
             <a href="#case-study">Case Study</a>
           </li>
           <li>
+            <a href="#why-choose-me">Why Choose Me</a>
+          </li>
+          <li>
             <a href="#services">Services</a>
           </li>
           <li>
@@ -132,6 +135,11 @@ export default function Navbar() {
           <li>
             <a href="#case-study" onClick={closeMenu}>
               Case Study
+            </a>
+          </li>
+          <li>
+            <a href="#why-choose-me" onClick={closeMenu}>
+              Why Choose Me
             </a>
           </li>
           <li>
