@@ -363,7 +363,11 @@ export default function Work() {
           <div
             key={index}
             className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
-            style={{ backgroundImage: `url(${project.image})` }}
+            style={{
+              backgroundImage: `url(./assets/${slugify(project.title)}-1.png), url(${project.image})`,
+              backgroundSize: 'cover, cover',
+              backgroundPosition: 'center, center'
+            }}
             onClick={() => setSelectedProject(project)}
             role="button"
             tabIndex={0}
