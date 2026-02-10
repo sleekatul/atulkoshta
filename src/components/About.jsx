@@ -85,9 +85,15 @@ export default function About() {
         <div className="flex-1">
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Professional Overview</h3>
           <p className="mb-6 max-w-2xl font-0vo text-gray-700 dark:text-gray-300">
-            With 15+ years of hands-on experience, I specialize in C#, .NET, and Xamarin Forms/MAUI to deliver
-            robust, scalable enterprise and mobile solutions. I’ve worked across every major Xamarin Forms release
-            and moved to .NET MAUI from day one, building consistent, high-performance apps for iOS and Android.
+            With 15+ years of experience building enterprise and SaaS solutions in .NET/C#, I’ve delivered full-stack
+            systems covering web apps, backend APIs, and database layers. I also bring 11+ years of cross-platform
+            mobile development, creating high-quality, immersive user experiences across iOS and Android. My portfolio
+            includes a wide range of feature-rich applications tailored to diverse clients and industries.
+          </p>
+          <p className="mb-6 max-w-2xl font-0vo text-gray-700 dark:text-gray-300">
+            Beyond development, I actively shape UX and UI to ensure products feel polished and intuitive. When you
+            work with me, you’ll get a smooth, efficient development cycle with regular updates and strategic input to
+            maximize outcomes. I’m highly experienced in .NET MAUI and Xamarin, backed by years of hands-on delivery.
           </p>
 
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-3 mt-8">Key Achievements</h3>
