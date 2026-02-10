@@ -493,10 +493,10 @@ export default function Work() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white"
+                      className="flex items-center text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white"
+                      aria-label={link.label}
                     >
                       <img src={link.icon} alt="" className="w-5 h-5" />
-                      {link.label}
                     </a>
                   ))}
                 </div>
