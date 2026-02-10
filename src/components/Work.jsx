@@ -386,7 +386,7 @@ export default function Work() {
               }
             }}
           >
-            <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+            <div className="bg-white dark:bg-gray-800/90 text-gray-900 dark:text-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
               <div>
                 <h2 className="font-semibold">{project.title}</h2>
                 <p className="text-sm text-gray-700 dark:text-gray-300">{project.category}</p>
