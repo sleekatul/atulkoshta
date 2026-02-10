@@ -24,7 +24,7 @@ export default function Work() {
       links: [
         { label: 'App Store', href: 'https://apps.apple.com/in/app/lightmode/id1602323833', icon: './assets/appstore.svg' },
         { label: 'Play Store', href: 'https://play.google.com/store/apps/details?id=com.thomas.lightmode&hl=en_IN', icon: './assets/playstore.svg' },
-        { label: 'Website', href: 'https://lightmodehelmets.com/', icon: './assets/website.svg' }
+        { label: 'Website', href: 'https://lightmodehelmets.com/', icon: './assets/web-icon.png' }
       ],
       technologies: ['.NET MAUI', 'C#', 'IoT', 'Bluetooth'],
       image: './assets/lightmode.gif'
