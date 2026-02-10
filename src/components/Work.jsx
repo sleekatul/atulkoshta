@@ -175,6 +175,34 @@ export default function Work() {
       image: './assets/work-4.png'
     },
     {
+      title: 'Dicip',
+      category: 'Education',
+      description: 'Offline-first student curriculum platform for schools, built with .NET MAUI.',
+      details:
+        'Teachers manage activities, goals, and tasks, while students track assignments and completion from any device.',
+      fullDetails: [
+        'Designed for schools to deliver curriculum content and daily learning workflows.',
+        'Teachers can create activities, set goals, assign tasks, and monitor progress.',
+        'Students can view assignments, track tasks, and update completion status.',
+        'Offline sync keeps data consistent between devices and the server when connectivity returns.'
+      ],
+      technologies: ['.NET MAUI', 'C#', 'SQLite', 'Offline Sync', 'Web API'],
+      image: './assets/work-4.png'
+    },
+    {
+      title: 'Timesheet',
+      category: 'Productivity',
+      description: 'Mobile timesheet app for tracking daily work hours with billable, non-billable, time-off, and overtime entries.',
+      details:
+        'Daily time tracking by project with billing classifications and approval workflows.',
+      fullDetails: [
+        'Tracks daily working hours by project with billable, non-billable, time-off, and overtime entries.',
+        'Helps teams capture accurate time data without friction.'
+      ],
+      technologies: ['.NET MAUI', 'C#'],
+      image: './assets/work-1.png'
+    },
+    {
       title: 'Swasth Bharat',
       category: 'Healthcare',
       description: 'Medical assessment tool for doctors. Manage complaints, examinations, fitness assessments, and patient history.',
@@ -186,6 +214,19 @@ export default function Work() {
       ],
       technologies: ['.NET MAUI', 'C#', 'Azure'],
       image: './assets/work-1.png'
+    },
+    {
+      title: 'Benefit Expressway',
+      category: 'HR & Benefits',
+      description: 'Platform to manage and search benefit elections for customers, family members, and beneficiaries.',
+      details:
+        'Benefit elections and enrollment management for employees, families, and beneficiaries.',
+      fullDetails: [
+        'Manage and search benefit elections for employees, families, and beneficiaries.',
+        'Designed to simplify enrollment choices and access to benefit details.'
+      ],
+      technologies: ['.NET MAUI', 'C#', 'Web API'],
+      image: './assets/work-4.png'
     },
     {
       title: 'ADR Reporting',
@@ -213,32 +254,6 @@ export default function Work() {
       ],
       technologies: ['.NET MAUI', 'HTML', 'JavaScript'],
       image: './assets/work-3.png'
-    },
-    {
-      title: 'Benefit Expressway',
-      category: 'HR & Benefits',
-      description: 'Platform to manage and search benefit elections for customers, family members, and beneficiaries.',
-      details:
-        'Benefit elections and enrollment management for employees, families, and beneficiaries.',
-      fullDetails: [
-        'Manage and search benefit elections for employees, families, and beneficiaries.',
-        'Designed to simplify enrollment choices and access to benefit details.'
-      ],
-      technologies: ['.NET MAUI', 'C#', 'Web API'],
-      image: './assets/work-4.png'
-    },
-    {
-      title: 'Timesheet',
-      category: 'Productivity',
-      description: 'Mobile timesheet app for tracking daily work hours with billable, non-billable, time-off, and overtime entries.',
-      details:
-        'Daily time tracking by project with billing classifications and approval workflows.',
-      fullDetails: [
-        'Tracks daily working hours by project with billable, non-billable, time-off, and overtime entries.',
-        'Helps teams capture accurate time data without friction.'
-      ],
-      technologies: ['.NET MAUI', 'C#'],
-      image: './assets/work-1.png'
     },
     {
       title: 'Cyber Truck',
@@ -275,6 +290,7 @@ export default function Work() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(4);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [availableScreenshots, setAvailableScreenshots] = useState([]);
 
   const nextProject = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
@@ -297,6 +313,40 @@ export default function Work() {
     return () => {
       document.removeEventListener('keydown', handleEsc);
       document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
+
+  useEffect(() => {
+    if (!selectedProject) {
+      setAvailableScreenshots([]);
+      return;
+    }
+
+    let isActive = true;
+    const base = slugify(selectedProject.title);
+    const urls = Array.from({ length: 12 }, (_, i) => `./assets/${base}-${i + 1}.png`);
+    const loaded = [];
+    let remaining = urls.length;
+
+    const finish = () => {
+      remaining -= 1;
+      if (remaining === 0 && isActive) {
+        setAvailableScreenshots(loaded);
+      }
+    };
+
+    urls.forEach((url) => {
+      const img = new Image();
+      img.onload = () => {
+        if (isActive) loaded.push(url);
+        finish();
+      };
+      img.onerror = finish;
+      img.src = url;
+    });
+
+    return () => {
+      isActive = false;
     };
   }, [selectedProject]);
 
@@ -395,17 +445,14 @@ export default function Work() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-                {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
-                  <img
-                    key={num}
-                    src={`./assets/${slugify(selectedProject.title)}-${num}.png`}
-                    alt={`${selectedProject.title} screenshot ${num}`}
-                    className="w-20 aspect-[9/16] object-cover rounded-md border border-gray-200 dark:border-white/20"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
-                ))}
+              {availableScreenshots.map((url, idx) => (
+                <img
+                  key={url}
+                  src={url}
+                  alt={`${selectedProject.title} screenshot ${idx + 1}`}
+                  className="w-20 aspect-[9/16] object-cover rounded-md border border-gray-200 dark:border-white/20"
+                />
+              ))}
             </div>
 
             <div className="flex-1 overflow-y-auto pr-1">
