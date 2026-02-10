@@ -21,6 +21,11 @@ export default function Work() {
         'This was a challenging hardware + mobile integration project delivered successfully.',
         'Available on the App Store and Play Store.'
       ],
+      links: [
+        { label: 'App Store', href: 'https://apps.apple.com/in/app/lightmode/id1602323833', icon: './assets/appstore.svg' },
+        { label: 'Play Store', href: 'https://play.google.com/store/apps/details?id=com.thomas.lightmode&hl=en_IN', icon: './assets/playstore.svg' },
+        { label: 'Website', href: 'https://lightmodehelmets.com/', icon: './assets/website.svg' }
+      ],
       technologies: ['.NET MAUI', 'C#', 'IoT', 'Bluetooth'],
       image: './assets/lightmode.gif'
     },
@@ -480,6 +485,22 @@ export default function Work() {
                   </span>
                 ))}
               </div>
+              {selectedProject.links && selectedProject.links.length > 0 && (
+                <div className="flex items-center gap-3">
+                  {selectedProject.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white"
+                    >
+                      <img src={link.icon} alt="" className="w-5 h-5" />
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
